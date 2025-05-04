@@ -5,13 +5,13 @@ test.beforeAll('Before all',() => {
 })
 test.beforeEach('Before each',() => {
     console.log("Before each");
-})
+});
 test('has title 1', async ({page}) =>{
     console.log("has title 1");
-})
+});
 test('has title 2', async ({page}) =>{
     console.log("has title 2");
-})
+});
 
 test.afterEach('after each',() => {
     console.log("after each");
