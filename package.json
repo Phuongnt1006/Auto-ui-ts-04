@@ -1,0 +1,22 @@
+{
+  "name": "auto-ui-ts-04",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phuongnt1006/Auto-ui-ts-04.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Phuongnt1006/Auto-ui-ts-04/issues"
+  },
+  "homepage": "https://github.com/Phuongnt1006/Auto-ui-ts-04#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.3"
+  }
+}
