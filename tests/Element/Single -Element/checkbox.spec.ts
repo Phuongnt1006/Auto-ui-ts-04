@@ -1,21 +1,21 @@
-import { test, expect } from '@playwright/test';
+import test, { expect, Page } from '@playwright/test';
 
 test.beforeEach('Before each', async ({page}) => {
-    await page.goto('https://test-with-me-app.vercel.app/learning/web-elements/elements/input');
+    await page.goto('https://test-with-me-app.vercel.app/learning/web-elements/elements/checkbox');
 });
 test('verify check checkbox', async ({ page }) => {
  await selectCheckbox(page, 'Apple', true);
  await expect(page.getByText('Selected values: Apple')).toBeVisible();
 });
 test('verify uncheck checkbox', async ({ page }) => {
-     await uncheckCheckbox(page, 'Apple', false);
+     await selectCheckbox(page, 'Apple', false);
      await expect(page.getByText('Selected values: Apple')).not.toBeVisible();
     });
 
 async function selectCheckbox(page: Page, label: String, check: boolean) {
     let xpath = `//lable[.//text()[normalize-space()='${label}'] and .//input[@type='checkbox']]`;
     let checkbox = page.locator(xpath);
-    let className = await checkbox.getAttribute('class')
+    let className = await checkbox.getAttribute('class');
     let classNames = className?.split(' ');
     let currentStatus = classNames?.includes('ant-checkbox-wrapper-checked');
     if ((!currentStatus && check) || (currentStatus && !check)) {
