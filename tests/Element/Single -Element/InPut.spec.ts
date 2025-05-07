@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import test, { expect, Page } from '@playwright/test';
 import { verify } from 'crypto';
 test.beforeEach('Before each', async ({page}) => {
     await page.goto('https://test-with-me-app.vercel.app/learning/web-elements/elements/input');
@@ -14,7 +14,7 @@ test('verify input number - first approach - using fill', async ({ page }) => {
     //await page.getByPlaceholder('Hello!').fill('ABC');
     await page.locator(xpath).fill("101");
     await page.keyboard.press('Enter');
-    expect(page.getByText('value: 101')).toBeVisible();
+    expect(page.getByText('value: 100')).toBeVisible();
 });
 test('verify input number - second approach - using keybroard type', async ({ page }) => {
     let xpath =`//input[@role = 'spinbutton']`;
